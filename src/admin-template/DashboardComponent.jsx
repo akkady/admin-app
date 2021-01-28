@@ -76,8 +76,8 @@ export default function DashboardComponent () {
             <h6 class="text-primary font-weight-bold m-0">Earnings Overview</h6>
             <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
                 <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in">
-                    <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item">&nbsp;Action</a><a class="dropdown-item" >&nbsp;Another action</a>
-                    <div class="dropdown-divider"></div><a class="dropdown-item" >&nbsp;Something else here</a>
+                    <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" >&nbsp;Action</a><a class="dropdown-item" href="/#" >&nbsp;Another action</a>
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="#" >&nbsp;Something else here</a>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@ export default function DashboardComponent () {
             <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
                 <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in">
                     <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="/#">&nbsp;Action</a><a class="dropdown-item" href="/#">&nbsp;Another action</a>
-                    <div class="dropdown-divider"></div><a class="dropdown-item" >&nbsp;Something else here</a>
+                    <div class="dropdown-divider"></div><a class="dropdown-item" href="/#" >&nbsp;Something else here</a>
                 </div>
             </div>
         </div>
