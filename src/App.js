@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+
 import './App.css';
+import AdminMain from "./admin-template/AdminMain"
 
 function App() {
   return (
     <div className="App">
-      <h1>hello wold </h1>
+      <AdminMain />
     </div>
   );
 }
