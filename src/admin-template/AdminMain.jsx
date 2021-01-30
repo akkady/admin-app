@@ -1,7 +1,10 @@
 import React ,{Component } from 'react';
-import LoginComponent from '../login/Loging';
-import DashboardComponent from './DashboardComponent';
+import {BrowserRouter as Router , NavLink, Route ,Switch } from 'react-router-dom';
+import ClientsTableComponent from './ClientsTableComponent';
 
+
+import DashboardComponent from './DashboardComponent';
+import ProfileComponent from './ProfileCcomponent'
 
 export default class AdminMain extends Component {
 
@@ -9,20 +12,21 @@ export default class AdminMain extends Component {
     render(){
         
         return (
+            <Router>
             <div id="page-top">
             <div id="wrapper">
                 <nav className="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
-                    <div className="container-fluid d-flex flex-column p-0"><a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="/#">
+                    <div className="container-fluid d-flex flex-column p-0"><a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="/adminMain">
                             <div className="sidebar-brand-icon rotate-n-15"><i className="fas fa-laugh-wink"></i></div>
-                            <div className="sidebar-brand-text mx-3"><span>Brand</span></div>
+                            <div className="sidebar-brand-text mx-3"><span>Balouki-Chop</span></div>
                         </a>
                         <hr className="sidebar-divider my-0"/>
                         <ul className="nav navbar-nav text-light" id="accordionSidebar">
-                            <li className="nav-item"><a className="nav-link active" href="index.html"><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
-                            <li className="nav-item"><a className="nav-link" href="profile.html"><i className="fas fa-user"></i><span>Profile</span></a></li>
-                            <li className="nav-item"><a className="nav-link" href="table.html"><i className="fas fa-table"></i><span>Table</span></a></li>
-                            <li className="nav-item"><a className="nav-link" href="login.html"><i className="far fa-user-circle"></i><span>Login</span></a></li>
-                            <li className="nav-item"><a className="nav-link" href="register.html"><i className="fas fa-user-circle"></i><span>Register</span></a></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/dashboard"><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></NavLink></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/profile"><i className="fas fa-user"></i><span>Profile</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/clients"><i className="fas fa-table"></i><span>Table</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/#"><i className="far fa-user-circle"></i><span>Login</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/register"><i className="fas fa-user-circle"></i><span>Register</span></NavLink ></li>
                         </ul>
                         <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                     </div>
@@ -126,8 +130,11 @@ export default class AdminMain extends Component {
                             </div>
                         </nav>
                     <div className="container-fluid">
-                        {/* {<LoginComponent /> } */}
-                        <DashboardComponent />
+                        <Switch>
+                            <Route path = "/dashboard" component = {DashboardComponent} />
+                            <Route path = "/profile" component = {ProfileComponent} />
+                            <Route path = "/clients" component = {ClientsTableComponent} />
+                        </Switch>
                     </div>
             </div>
                     <footer className="bg-white sticky-footer">
@@ -139,6 +146,7 @@ export default class AdminMain extends Component {
             </div>
   
         </div>
+        </Router>
         )
     }
 

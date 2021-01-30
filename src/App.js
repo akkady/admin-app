@@ -1,11 +1,20 @@
-
 import './App.css';
 import AdminMain from "./admin-template/AdminMain"
+import LoginComponent from './login/LoginComponent'
+import {BrowserRouter as Router , Route, Switch } from 'react-router-dom';
+
+
 
 function App() {
   return (
     <div className="App">
-      <AdminMain />
+       <Router>
+          <Switch>
+              <Route exact path = "/"  component= {LoginComponent}/>
+              <Route path= "/adminMain" component = {AdminMain}/>
+              <Route path = "/logout" component = {LoginComponent} />
+          </Switch>
+      </Router>
     </div>
   );
 }
