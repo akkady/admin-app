@@ -1,9 +1,10 @@
 import React ,{Component } from 'react';
-import {BrowserRouter as Router , NavLink, Route ,Switch } from 'react-router-dom';
+import {BrowserRouter as Router ,Link , NavLink, Route ,Switch } from 'react-router-dom';
 import ClientsTableComponent from './ClientsTableComponent';
 
 
 import DashboardComponent from './DashboardComponent';
+import ProductsComponenet from './ProductsComponent';
 import ProfileComponent from './ProfileCcomponent'
 
 export default class AdminMain extends Component {
@@ -24,8 +25,8 @@ export default class AdminMain extends Component {
                         <ul className="nav navbar-nav text-light" id="accordionSidebar">
                             <li className="nav-item"><NavLink className="nav-link" to="/dashboard"><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></NavLink></li>
                             <li className="nav-item"><NavLink className="nav-link" to="/profile"><i className="fas fa-user"></i><span>Profile</span></NavLink ></li>
-                            <li className="nav-item"><NavLink className="nav-link" to="/clients"><i className="fas fa-table"></i><span>Table</span></NavLink ></li>
-                            <li className="nav-item"><NavLink className="nav-link" to="/#"><i className="far fa-user-circle"></i><span>Login</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/clients"><i className="far fa-user-circle"></i><span>Users</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/product"><i className="fas fa-table"></i><span>Products</span></NavLink ></li>
                             <li className="nav-item"><NavLink className="nav-link" to="/register"><i className="fas fa-user-circle"></i><span>Register</span></NavLink ></li>
                         </ul>
                         <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
@@ -121,7 +122,7 @@ export default class AdminMain extends Component {
                                     <div className="d-none d-sm-block topbar-divider"></div>
                                     <li className="nav-item dropdown no-arrow">
                                         <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="/#"><span className="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img className="border rounded-circle img-profile" src="./assets/img/avatars/avatar1.jpeg" alt="gg" /></a>
-                                            <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a className="dropdown-item" href="/#" ><i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a className="dropdown-item" href="/#" ><i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a><a className="dropdown-item" href="/#"><i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
+                                            <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in"><Link className="dropdown-item" to="/profile" ><i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</Link>
                                                 <div className="dropdown-divider"></div><a className="dropdown-item" href="/#"><i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                             </div>
                                         </div>
@@ -134,6 +135,7 @@ export default class AdminMain extends Component {
                             <Route path = "/dashboard" component = {DashboardComponent} />
                             <Route path = "/profile" component = {ProfileComponent} />
                             <Route path = "/clients" component = {ClientsTableComponent} />
+                            <Route path = "/product" component = {ProductsComponenet} />
                         </Switch>
                     </div>
             </div>
