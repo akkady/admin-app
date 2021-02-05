@@ -2,20 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function ProductsComponenet() {
-    return (
-        <div className="container-fluid">
-             <h3 className="page-title row"> Products</h3>
+    return (<div className="card shadow">
+                <div className="card-header py-3">
+                    <p className="text-primary m-0 font-weight-bold">Products</p>
+                </div>
+            <div className="card-body">
                 <div className="row">
-                        <div className="col-md-12">
-                        <div className="navbar navbar-light bg-light">
-                                <div className="container-fluid">
-                                 <Link to="/new-product"  className="btn btn-success" >Add New Product</Link>
-                                        <form className="d-flex" >
-                                                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                                                <button className="btn btn-outline-success" type="submit">Search</button>
-                                        </form>
-                                </div>
-                                </div>
+                    <div className="col-md-6 text-nowrap">
+                        <Link to="/new-product"  className="btn btn-success" ><i class="fas fa-plus-circle"></i>add new product</Link>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" className="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"/></label></div>
+                    </div>
+                </div>
                 <div className="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                     <table className="table my-0" id="dataTable">
                         <thead>
@@ -68,7 +67,6 @@ export default function ProductsComponenet() {
                     </div>
                 </div>
             </div>          
-             </div>        
-        </div>
+            </div>
     )
 }

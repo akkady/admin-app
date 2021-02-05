@@ -1,5 +1,7 @@
 import React ,{Component } from 'react';
 import {BrowserRouter as Router ,Link , NavLink, Route ,Switch } from 'react-router-dom';
+import AddProductComponent from './AddProductComponent';
+import CategorieProductComponent from './CategorieProductComponent';
 import ClientsTableComponent from './ClientsTableComponent';
 
 
@@ -26,8 +28,8 @@ export default class AdminMain extends Component {
                             <li className="nav-item"><NavLink className="nav-link" to="/dashboard"><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></NavLink></li>
                             <li className="nav-item"><NavLink className="nav-link" to="/profile"><i className="fas fa-user"></i><span>Profile</span></NavLink ></li>
                             <li className="nav-item"><NavLink className="nav-link" to="/clients"><i className="far fa-user-circle"></i><span>Users</span></NavLink ></li>
-                            <li className="nav-item"><NavLink className="nav-link" to="/product"><i className="fas fa-table"></i><span>Products</span></NavLink ></li>
-                            <li className="nav-item"><NavLink className="nav-link" to="/register"><i className="fas fa-user-circle"></i><span>Register</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/product"><i class="fas fa-shopping-basket"></i><span>Products</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/categories"><i class="fas fa-cubes"></i><span>Categories</span></NavLink ></li>
                         </ul>
                         <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                     </div>
@@ -136,6 +138,8 @@ export default class AdminMain extends Component {
                             <Route path = "/profile" component = {ProfileComponent} />
                             <Route path = "/clients" component = {ClientsTableComponent} />
                             <Route path = "/product" component = {ProductsComponenet} />
+                            <Route path = "/new-product" component = {AddProductComponent} /> 
+                            <Route path = "/categories" component = {CategorieProductComponent} />
                         </Switch>
                     </div>
             </div>
@@ -145,8 +149,7 @@ export default class AdminMain extends Component {
                         </div>
                     </footer>
                      </div><a className="border rounded d-inline scroll-to-top" href="#page-top"><i className="fas fa-angle-up"></i></a>
-            </div>
-  
+            </div>  
         </div>
         </Router>
         )

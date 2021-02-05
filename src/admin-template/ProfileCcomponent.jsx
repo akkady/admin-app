@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ProfileComponent() {
     return (
-        <div className="container-fluid">
+        <>
                     <h3 className="text-dark mb-4">Profile</h3>
                     <div className="row mb-3">
                         <div className="col-lg-4">
@@ -123,15 +123,17 @@ export default function ProfileComponent() {
                     </div>
                     <div className="card shadow mb-5">
                         <div className="card-header py-3">
-                            <p className="text-primary m-0 font-weight-bold">Forum Settings</p>
+                            <p className="text-primary m-0 font-weight-bold">Password Settings</p>
                         </div>
                         <div className="card-body">
                             <div className="row">
                                 <div className="col-md-6">
                                     <form>
-                                        <div className="form-group"><label htmlFor="signature"><strong>Signature</strong><br/></label><textarea className="form-control" rows="4" name="signature"></textarea></div>
-                                        <div className="form-group">
-                                            <div className="custom-control custom-switch"><input className="custom-control-input" type="checkbox" id="formCheck-1"/><label className="custom-control-label" htmlFor="formCheck-1"><strong>Notify me about new replies</strong></label></div>
+                                        <div className="col-6">
+                                            <div className="form-group"><label htmlFor="first_name"><strong>curent password</strong></label><input className="form-control" type="text"  name="first_name"/></div>
+                                        </div>
+                                        <div className="col-6">
+                                            <div className="form-group"><label htmlFor="last_name"><strong>the new password</strong></label><input className="form-control" type="text"  name="last_name"/></div>
                                         </div>
                                         <div className="form-group"><button className="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
                                     </form>
@@ -139,6 +141,6 @@ export default function ProfileComponent() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </>
     )   
 }

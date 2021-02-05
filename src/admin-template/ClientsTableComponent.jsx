@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 export default function ClientsTableComponent (){
 
     return(
-        <div className="container-fluid">
-        <h3 className="text-dark mb-4 row">Clients</h3>
         <div className="card shadow">
             <div className="card-header py-3">
                 <p className="text-primary m-0 font-weight-bold">Clients Info</p>
@@ -124,6 +122,5 @@ export default function ClientsTableComponent (){
                 </div>
             </div>
         </div>
-    </div>
     )
 }
