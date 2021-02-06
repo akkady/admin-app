@@ -28,8 +28,8 @@ export default class AdminMain extends Component {
                             <li className="nav-item"><NavLink className="nav-link" to="/dashboard"><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></NavLink></li>
                             <li className="nav-item"><NavLink className="nav-link" to="/profile"><i className="fas fa-user"></i><span>Profile</span></NavLink ></li>
                             <li className="nav-item"><NavLink className="nav-link" to="/clients"><i className="far fa-user-circle"></i><span>Users</span></NavLink ></li>
-                            <li className="nav-item"><NavLink className="nav-link" to="/product"><i class="fas fa-shopping-basket"></i><span>Products</span></NavLink ></li>
-                            <li className="nav-item"><NavLink className="nav-link" to="/categories"><i class="fas fa-cubes"></i><span>Categories</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/product"><i className="fas fa-shopping-basket"></i><span>Products</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/categories"><i className="fas fa-cubes"></i><span>Categories</span></NavLink ></li>
                         </ul>
                         <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                     </div>

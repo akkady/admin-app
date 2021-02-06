@@ -9,7 +9,7 @@ export default function ProductsComponenet() {
             <div className="card-body">
                 <div className="row">
                     <div className="col-md-6 text-nowrap">
-                        <Link to="/new-product"  className="btn btn-success" ><i class="fas fa-plus-circle"></i>add new product</Link>
+                        <Link to="/adminMain/new-product"  className="btn btn-success" ><i className="fas fa-plus-circle"></i>add new product</Link>
                     </div>
                     <div className="col-md-6">
                         <div className="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" className="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"/></label></div>
