@@ -1,8 +1,10 @@
 import React ,{Component } from 'react';
 import {BrowserRouter as Router ,Link , NavLink, Route ,Switch } from 'react-router-dom';
+import AddCategorieComponent from './AddCategorieComponent';
 import AddProductComponent from './AddProductComponent';
 import CategorieProductComponent from './CategorieProductComponent';
 import ClientsTableComponent from './ClientsTableComponent';
+import CommandesComponenet from './CommandesComponenet';
 
 
 import DashboardComponent from './DashboardComponent';
@@ -25,11 +27,12 @@ export default class AdminMain extends Component {
                         </a>
                         <hr className="sidebar-divider my-0"/>
                         <ul className="nav navbar-nav text-light" id="accordionSidebar">
-                            <li className="nav-item"><NavLink className="nav-link" to="/dashboard"><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></NavLink></li>
-                            <li className="nav-item"><NavLink className="nav-link" to="/profile"><i className="fas fa-user"></i><span>Profile</span></NavLink ></li>
-                            <li className="nav-item"><NavLink className="nav-link" to="/clients"><i className="far fa-user-circle"></i><span>Users</span></NavLink ></li>
-                            <li className="nav-item"><NavLink className="nav-link" to="/product"><i className="fas fa-shopping-basket"></i><span>Products</span></NavLink ></li>
-                            <li className="nav-item"><NavLink className="nav-link" to="/categories"><i className="fas fa-cubes"></i><span>Categories</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/adminMain/dashboard"><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></NavLink></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/adminMain/profile"><i className="fas fa-user"></i><span>Profile</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/adminMain/clients"><i className="far fa-user-circle"></i><span>Users</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/adminMain/product"><i className="fas fa-shopping-basket"></i><span>Products</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/adminMain/categories"><i className="fas fa-cubes"></i><span>Categories</span></NavLink ></li>
+                            <li className="nav-item"><NavLink className="nav-link" to="/adminMain/commands"><i class="fas fa-gifts"></i><span>Commands</span></NavLink ></li>
                         </ul>
                         <div className="text-center d-none d-md-inline"><button className="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
                     </div>
@@ -85,7 +88,7 @@ export default class AdminMain extends Component {
                                         <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="/#"><i className="fas fa-envelope fa-fw"></i><span className="badge badge-danger badge-counter">7</span></a>
                                             <div className="dropdown-menu dropdown-menu-right dropdown-list dropdown-menu-right animated--grow-in">
                                                 <h6 className="dropdown-header">alerts center</h6><a className="d-flex align-items-center dropdown-item" href="/#">
-                                                    <div className="dropdown-list-image mr-3" ><img className="rounded-circle" src="assets/img/avatars/avatar4.jpeg" alt="gg" />
+                                                    <div className="dropdown-list-image mr-3" ><img className="rounded-circle" src="/assets/img/avatars/avatar4.jpeg" alt="gg" />
                                                         <div className="bg-success status-indicator"></div>
                                                     </div>
                                                     <div className="font-weight-bold">
@@ -93,7 +96,7 @@ export default class AdminMain extends Component {
                                                         <p className="small text-gray-500 mb-0">Emily Fowler - 58m</p>
                                                     </div>
                                                 </a><a className="d-flex align-items-center dropdown-item" href="/#">
-                                                    <div className="dropdown-list-image mr-3"><img className="rounded-circle" src="assets/img/avatars/avatar2.jpeg"alt="gg"/>
+                                                    <div className="dropdown-list-image mr-3"><img className="rounded-circle" src="/assets/img/avatars/avatar2.jpeg"alt="gg"/>
                                                         <div className="status-indicator"></div>
                                                     </div>
                                                     <div className="font-weight-bold">
@@ -101,7 +104,7 @@ export default class AdminMain extends Component {
                                                         <p className="small text-gray-500 mb-0">Jae Chun - 1d</p>
                                                     </div>
                                                 </a><a className="d-flex align-items-center dropdown-item" href="/#">
-                                                    <div className="dropdown-list-image mr-3"><img className="rounded-circle" src="assets/img/avatars/avatar3.jpeg" alt="gg"/>
+                                                    <div className="dropdown-list-image mr-3"><img className="rounded-circle" src="/assets/img/avatars/avatar3.jpeg" alt="gg"/>
                                                         <div className="bg-warning status-indicator"></div>
                                                     </div>
                                                     <div className="font-weight-bold">
@@ -109,7 +112,7 @@ export default class AdminMain extends Component {
                                                         <p className="small text-gray-500 mb-0">Morgan Alvarez - 2d</p>
                                                     </div>
                                                 </a><a className="d-flex align-items-center dropdown-item" href="/#">
-                                                    <div className="dropdown-list-image mr-3"><img className="rounded-circle" src="assets/img/avatars/avatar5.jpeg" alt="gg"/>
+                                                    <div className="dropdown-list-image mr-3"><img className="rounded-circle" src="/assets/img/avatars/avatar5.jpeg" alt="gg"/>
                                                         <div className="bg-success status-indicator"></div>
                                                     </div>
                                                     <div className="font-weight-bold">
@@ -123,8 +126,8 @@ export default class AdminMain extends Component {
                                     </li>
                                     <div className="d-none d-sm-block topbar-divider"></div>
                                     <li className="nav-item dropdown no-arrow">
-                                        <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="/#"><span className="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img className="border rounded-circle img-profile" src="./assets/img/avatars/avatar1.jpeg" alt="gg" /></a>
-                                            <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in"><Link className="dropdown-item" to="/profile" ><i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</Link>
+                                        <div className="nav-item dropdown no-arrow"><a className="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="/#"><span className="d-none d-lg-inline mr-2 text-gray-600 small">Valerie Luna</span><img className="border rounded-circle img-profile" src="/assets/img/avatars/avatar1.jpeg" alt="gg" /></a>
+                                            <div className="dropdown-menu shadow dropdown-menu-right animated--grow-in"><Link className="dropdown-item" to="/adminMain/profile" ><i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</Link>
                                                 <div className="dropdown-divider"></div><a className="dropdown-item" href="/#"><i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
                                             </div>
                                         </div>
@@ -134,12 +137,14 @@ export default class AdminMain extends Component {
                         </nav>
                     <div className="container-fluid">
                         <Switch>
-                            <Route path = "/dashboard" component = {DashboardComponent} />
-                            <Route path = "/profile" component = {ProfileComponent} />
-                            <Route path = "/clients" component = {ClientsTableComponent} />
-                            <Route path = "/product" component = {ProductsComponenet} />
-                            <Route path = "/new-product" component = {AddProductComponent} /> 
-                            <Route path = "/categories" component = {CategorieProductComponent} />
+                            <Route path = "/adminMain/dashboard" component = {DashboardComponent} />
+                            <Route path = "/adminMain/profile" component = {ProfileComponent} />
+                            <Route path = "/adminMain/clients" component = {ClientsTableComponent} />
+                            <Route path = "/adminMain/product" component = {ProductsComponenet} />
+                            <Route path = "/adminMain/new-product" component = {AddProductComponent} /> 
+                            <Route path = "/adminMain/categories" component = {CategorieProductComponent} />
+                            <Route path = "/adminMain/commands" component = {CommandesComponenet} />
+                            <Route path = "/adminMain/new-categorie" component = {AddCategorieComponent} />                            
                         </Switch>
                     </div>
             </div>

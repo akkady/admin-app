@@ -6,17 +6,12 @@ export default function CategorieProductComponent(){
     return(
          <div className="card shadow">
             <div className="card-header ">
-                <p className="text-primary m-0 font-weight-bold">Employee Info</p>
+                <p className="text-primary m-0 font-weight-bold">Categories</p>
             </div>
             <div className="card-body">
                 <div className="row">
-                    <div className="col-md-6 text-nowrap">
-                        <div id="dataTable_length" className="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;<select className="form-control form-control-sm custom-select custom-select-sm">
-                                    <option value="10" defaultValue="10">10</option>
-                                    <option value="25">25</option>
-                                    <option value="50">50</option>
-                                    <option value="100">100</option>
-                                </select>&nbsp;</label></div>
+                <div className="col-md-6 text-nowrap">
+                        <Link to="/adminMain/new-categorie"  className="btn btn-success" ><i className="fas fa-plus-circle"></i> new categorie</Link>
                     </div>
                     <div className="col-md-6">
                         <div className="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" className="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"/></label></div>

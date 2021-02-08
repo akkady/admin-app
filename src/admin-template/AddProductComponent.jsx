@@ -15,7 +15,7 @@ export default  function AddProductComponent  (){
                   <div className="form-row">
                       <div className="col">
                           <div className="form-group">
-                            <label htmlFor="username"><strong>Name</strong></label><input className="form-control" type="text" placeholder="user.name" name="name"/>
+                            <label htmlFor="username"><strong>Name</strong></label><input className="form-control" type="text" placeholder="product name" name="name"/>
                           </div>
                       <div>
                           <div className="form-group"><label htmlFor="détails"><strong>Détails</strong></label><input className="form-control" type="text" placeholder="détails" name="détails"/></div>

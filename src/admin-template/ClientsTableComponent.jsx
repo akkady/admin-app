@@ -34,61 +34,61 @@ export default function ClientsTableComponent (){
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="assets/img/avatars/avatar1.jpeg" alt="gg"/>Airi Satou</td>
+                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="/assets/img/avatars/avatar1.jpeg" alt="gg"/>Airi Satou</td>
                                 <td>email21@gmail.com</td>
                                 <td>Tokyo</td>
                                 <td>2008/11/28</td>
                             </tr>
                             <tr>
-                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="assets/img/avatars/avatar2.jpeg" alt='gg'/>Angelica Ramos</td>
+                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="/assets/img/avatars/avatar2.jpeg" alt='gg'/>Angelica Ramos</td>
                                 <td>Chief Executive Officer(CEO)</td>
                                 <td>London</td>
                                 <td>2009/10/09<br/></td>
                             </tr>
                             <tr>
-                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="assets/img/avatars/avatar3.jpeg" alt='gg'/>Ashton Cox</td>
+                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="/assets/img/avatars/avatar3.jpeg" alt='gg'/>Ashton Cox</td>
                                 <td>Junior Technical Author</td>
                                 <td>San Francisco</td>
                                 <td>2009/01/12<br/></td>
                             </tr>
                             <tr>
-                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="assets/img/avatars/avatar4.jpeg" alt='gg'/>Bradley Greer</td>
+                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="/assets/img/avatars/avatar4.jpeg" alt='gg'/>Bradley Greer</td>
                                 <td>Software Engineer</td>
                                 <td>London</td>
                                 <td>2012/10/13<br/></td>
                             </tr>
                             <tr>
-                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="assets/img/avatars/avatar5.jpeg" alt='gg' />Brenden Wagner</td>
+                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="/assets/img/avatars/avatar5.jpeg" alt='gg' />Brenden Wagner</td>
                                 <td>Software Engineer</td>
                                 <td>San Francisco</td>
                                 <td>2011/06/07<br/></td>
                             </tr>
                             <tr>
-                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="assets/img/avatars/avatar1.jpeg" alt='gg'/>Brielle Williamson</td>
+                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="/assets/img/avatars/avatar1.jpeg" alt='gg'/>Brielle Williamson</td>
                                 <td>Integration Specialist</td>
                                 <td>New York</td>
                                 <td>2012/12/02<br/></td>
                             </tr>
                             <tr>
-                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="assets/img/avatars/avatar2.jpeg" alt='gg'/>Bruno Nash<br/></td>
+                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="/assets/img/avatars/avatar2.jpeg" alt='gg'/>Bruno Nash<br/></td>
                                 <td>Software Engineer</td>
                                 <td>London</td>
                                 <td>2011/05/03<br/></td>
                             </tr>
                             <tr>
-                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="assets/img/avatars/avatar3.jpeg" alt='gg'/>Caesar Vance</td>
+                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="/assets/img/avatars/avatar3.jpeg" alt='gg'/>Caesar Vance</td>
                                 <td>Pre-Sales Support</td>
                                 <td>New York</td>
                                 <td>2011/12/12<br/></td>
                             </tr>
                             <tr>
-                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="assets/img/avatars/avatar4.jpeg" alt='gg'/>Cara Stevens</td>
+                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="/assets/img/avatars/avatar4.jpeg" alt='gg'/>Cara Stevens</td>
                                 <td>Sales Assistant</td>
                                 <td>New York</td>
                                 <td>2011/12/06<br/></td>
                             </tr>
                             <tr>
-                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="assets/img/avatars/avatar5.jpeg" alt='gg'/>Cedric Kelly</td>
+                                <td><img className="rounded-circle mr-2" style={{width:"30" , height:"30"}} src="/assets/img/avatars/avatar5.jpeg" alt='gg'/>Cedric Kelly</td>
                                 <td>Senior JavaScript Developer</td>
                                 <td>Edinburgh</td>
                                 <td>2012/03/29<br/></td>
