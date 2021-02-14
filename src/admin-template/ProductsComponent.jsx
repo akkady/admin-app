@@ -32,7 +32,7 @@ export default function ProductsComponenet() {
                                 <td >TV 1</td>
                                 <td>50 inch screen, Smart TV, 4K</td>
                                 <td>$867.99</td>
-                                <td> <img src="assets/img/PRODUCT/1.jpg" width="100" height="100"alt='product img'></img></td>
+                                <td> <img src="/assets/img/PRODUCT/1.jpg" width="100" height="100"alt='product img'></img></td>
                                 <td>
                                     <Link to="" className="btn btn-sm btn-primary">
                                     <span className="hidden-xs hidden-sm">View</span></Link>

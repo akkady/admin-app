@@ -11,7 +11,7 @@ export default function ProfileComponent() {
                                     <div className="mb-3"><button className="btn btn-primary btn-sm" type="button">Change Photo</button></div>
                                 </div>
                             </div>
-                            <div className="card shadow mb-4">
+                            {/* <div className="card shadow mb-4">
                                 <div className="card-header py-3">
                                     <h6 className="text-primary font-weight-bold m-0">Projects</h6>
                                 </div>
@@ -37,7 +37,7 @@ export default function ProfileComponent() {
                                         <div className="progress-bar bg-success" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style={{width: '100%'}}><span className="sr-only">100%</span></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="col-lg-8">
                             <div className="row mb-3 d-none">
@@ -95,25 +95,6 @@ export default function ProfileComponent() {
                                                     </div>
                                                 </div>
                                                 <div className="form-group"><button className="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div className="card shadow">
-                                        <div className="card-header py-3">
-                                            <p className="text-primary m-0 font-weight-bold">Contact Settings</p>
-                                        </div>
-                                        <div className="card-body">
-                                            <form>
-                                                <div className="form-group"><label htmlFor="address"><strong>Address</strong></label><input className="form-control" type="text" placeholder="Sunset Blvd, 38" name="address"/></div>
-                                                <div className="form-row">
-                                                    <div className="col">
-                                                        <div className="form-group"><label htmlFor="city"><strong>City</strong></label><input className="form-control" type="text" placeholder="Los Angeles" name="city"/></div>
-                                                    </div>
-                                                    <div className="col">
-                                                        <div className="form-group"><label htmlFor="country"><strong>Country</strong></label><input className="form-control" type="text" placeholder="USA" name="country"/></div>
-                                                    </div>
-                                                </div>
-                                                <div className="form-group"><button className="btn btn-primary btn-sm" type="submit">Save&nbsp;Settings</button></div>
                                             </form>
                                         </div>
                                     </div>
