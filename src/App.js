@@ -6,6 +6,7 @@ import ForgotPassword from "./login/ForgotPassword";
 
 
 function App() {
+  //const username = sessionStorage.getItem('authenticatedUser');
   return (
     <div className="App">
        <Router>

@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import CategorieService from './CategorieService';
 
 export default function CategorieProductComponent(){
+ 
+    const [categories,setCategories]=useState([])
 
+    useEffect (()=>{
+        CategorieService.getAllCategorie()
+        .then((response) =>setCategories(response.data) );
+    },[])
+
+    
     return(
          <div className="card shadow">
             <div className="card-header ">
@@ -28,48 +37,17 @@ export default function CategorieProductComponent(){
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Laptop</td>
-                                <td>laptop</td>                
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Descktop</td>
-                                <td>descktop</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Mobile Phone</td>
-                                <td>mobile-phone </td>                            
-                            </tr>
-                        
-                        </tbody>                                                       
-                        <tfoot>
-                            <tr>
-                                <td><strong>ID</strong></td>
-                                <td><strong>Name</strong></td>
-                                <td><strong>Slug</strong></td>
-                                
-                            </tr>
-                        </tfoot>
+                        {  categories.map(
+                                categorie => 
+                            <tr key = {categorie.idCategorie}>
+                                <td> {categorie.idCategorie}</td>
+                                <td> {categorie.nomCategorie}</td>
+                                <td> {categorie.slag}</td>
+                             
+                            </tr>  
+                            )}
+                        </tbody>    
                     </table>
-                </div>
-                <div className="row">
-                    <div className="col-md-6 align-self-center">
-                        <p id="dataTable_info" className="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-                    </div>
-                    <div className="col-md-6">
-                        <nav className="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                            <ul className="pagination">
-                                <li className="page-item disabled"><Link className="page-link" to="/#" aria-label="Previous"><span aria-hidden="true">&#171;</span></Link></li>
-                                <li className="page-item active"><Link className="page-link" to="/#">1</Link></li>
-                                <li className="page-item"><Link className="page-link" to="/#">2</Link></li>
-                                <li className="page-item"><Link className="page-link" to="/#">3</Link></li>
-                                <li className="page-item"><Link className="page-link" to="/#" aria-label="Next"><span aria-hidden="true">&#188;</span></Link></li>
-                            </ul>
-                        </nav>
-                    </div>
                 </div>
             </div>
         </div>

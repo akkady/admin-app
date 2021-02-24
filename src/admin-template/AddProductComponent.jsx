@@ -1,9 +1,31 @@
 
-import React  from 'react'; 
+import React, { useState }  from 'react'; 
+import ProductsService from './ProductsService';
 
 export default  function AddProductComponent  (){
+      const [saved,setSaved]= useState(false)
+      const [unsaved,setUnsaved]= useState(false)
+      const [name, setName] = useState('')
+      const [shortDescription, setDescreption ] = useState('')
+      const [quantite, setQte] = useState(0)
+      const [price, setPrice] = useState(0)
+      const staut = useState(true)
+      const [image, setImage] = useState('')
+      const [category, SetCategorie] = useState(1)
+      const formData = new FormData();
+      formData.append("name",name);
+      formData.append("shortDescription",shortDescription);
+      formData.append("staut",staut);
+      formData.append("image",image);
+      formData.append("quantite",quantite);
+      formData.append("idCategorie",category);
+      formData.append("price",price);
 
-   
+      const saveProduct=()=>{
+          ProductsService.addProduct(formData)
+          .then(res=>{setUnsaved(false); setSaved(true)})
+          .catch(err=>{setUnsaved(true); setSaved(false)})
+      }
       return (
         <div className="card ">
        <div className="card shadow mb-3">
@@ -15,20 +37,32 @@ export default  function AddProductComponent  (){
                   <div className="form-row">
                       <div className="col">
                           <div className="form-group">
-                            <label htmlFor="username"><strong>Name</strong></label><input className="form-control" type="text" placeholder="product name" name="name"/>
+                            <label htmlFor="username"><strong>ProductName</strong></label><input className="form-control" type="text" placeholder="product name"  onChange={(event)=>setName(event.target.value)}/>
+                          </div>
+                          <div className="form-group">
+                            <label htmlFor="price"><strong>price</strong></label><input className="form-control" type="number" placeholder="product price" min="1" onChange={(event)=>setPrice(event.target.value)}/>
                           </div>
                       <div>
-                          <div className="form-group"><label htmlFor="détails"><strong>Détails</strong></label><input className="form-control" type="text" placeholder="détails" name="détails"/></div>
-                          <div className="form-group"><label htmlFor="description"><strong>description</strong><br/></label><textarea className="form-control" rows="3" name="description"></textarea></div>
-                          <div className="form-group"><label htmlFor="Image"><strong>Image</strong></label><input className="form-control" type="file" placeholder="img" name="img"/>
-                          
-                          </div>
-                          <div className="form-group"><label htmlFor="Quantity"><strong>Quantity</strong></label><input className="form-control" type="text" placeholder="5" name="last_name"/></div>
+                          <div className="form-group"><label htmlFor="description"><strong>description</strong><br/></label><textarea className="form-control" rows="3" onChange={(event)=>setDescreption(event.target.value)}></textarea></div>
+                          <div className="form-group"><label htmlFor="Image"><strong>Image</strong></label><input className="form-control" type="file" placeholder="img" name="img" onChange={(event)=>setImage(event.target.value)}/>
+                         </div>
+                          <div className="form-group"><label htmlFor="Quantity"><strong>Quantity</strong></label><input className="form-control" type="text" placeholder="quantite" onChange={(event)=>setQte(event.target.value)} /></div>
+                          <div className="form-floating">
+                            <label htmlFor="floatingSelect" >chose the category </label><br/>
+                            <select className="form-select form-select-lg mb-3" aria-label=".form-select-lg example" onChange={(event)=>SetCategorie(event.target.value)} onClick={console.log(category)} >
+                                <option defaultValue value="1">category 1</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                            </div>
                        </div>
-                       <div></div>
+                       <div>  
+                       </div>
                       </div>
                   </div>
-                  <div className="form-group"><button className="btn btn-primary btn-sm" type="submit">Ajout</button></div>
+                  { unsaved && <div className='alert alert-warning' > Something goes wrong please check your inputs </div>}
+                  { saved && <div className='alert alert-success' > product was added </div>}
+                  <div className="form-group"><button className="btn btn-primary btn-sm" type="button" onClick={saveProduct}>Save</button></div>
               </form>
           </div>
        </div>
