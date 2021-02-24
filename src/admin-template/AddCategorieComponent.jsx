@@ -1,4 +1,5 @@
 
+
 import React, { useState }  from 'react'; 
 import { useHistory } from 'react-router-dom';
 import CategorieService from './CategorieService';
@@ -20,8 +21,7 @@ function AddCategorie () {
         .then(history.push('/adminMain/categories'))
         .catch(err=>setUnsaved(true))
     }
-    
-      return (
+     return (
         <div className="card ">
        <div className="card shadow mb-3">
           <div className="card-header py-3">
@@ -41,12 +41,13 @@ function AddCategorie () {
                     </div>
                     </div>
                 </div>
-                <div className="form-group"><button className="btn btn-primary btn-sm" type="button" >save</button></div>
+                <div className="form-group"><button className="btn btn-primary btn-sm" type="button" onClick={saveProduct}>save</button></div>
           </div>
        </div>
       
        </div>
       );
-}
+    }
+
     export default AddCategorie;
    
