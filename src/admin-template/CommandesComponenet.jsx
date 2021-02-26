@@ -1,109 +1,122 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import CommandeService from './CommandeService';
 
 export default function CommandesComponenet() {
+
+    const [Commandes,setCommandes]=useState([]);
+    useEffect(() => {
+        CommandeService.allCommandes().then(res=>(setCommandes(res.data)));
+    },[]);
+
+    const [details,setDetails]= useState(false);
+
+    const [idCommande,setIdCommande]= useState('');
+    const [companyName,setCompanyName]= useState('');
+    const [adresse,setAdresse]= useState('');
+    const [city,setCity]= useState('');
+    const [phone,setPhone]= useState('');
+    const [country,setCountry]= useState('');
+    const [notes,setNotes]= useState('');
+    const [products,setProducts]= useState([]);
+
+    const showDetails = (commande)=>{
+
+        setIdCommande(commande.idCommande);
+        setNotes(commande.notes);
+        setCountry(commande.country);
+        setAdresse(commande.adresse);
+        setCity(commande.city);
+        setCompanyName(commande.companyName);
+        setPhone(commande.phone);
+        setProducts(commande.products);
+        setDetails(true);
+    }
+    const hideDetails = ()=>{
+        setDetails(false);
+    }
     return (<div className="card shadow">
                 <div className="card-header py-3">
                     <p className="text-primary m-0 font-weight-bold">Commandes</p>
                 </div>
             <div className="card-body">
-               
-                <div className="row">
-                    <div></div>
-                    <div className="col-md-6">
-                        <div className="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" className="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"/></label></div>
-                    </div>
-                </div>
                 <div className="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
-                    <table className="table my-0" id="dataTable">
+                    
+                    {! details &&<table className="table my-0" id="dataTable">
                         <thead>
                             <tr>
-                                <th>id_Command</th>
-                                <th>id_Client</th>
-                                <th>email_Client</th>  
-                                <th>numero_Cart</th>
-                                <th>id_produit</th>
-                                <th>qunatité</th>
-                                <th>prix $</th>
-                                <th>action</th>        
+                                <th>numero de commande </th> 
+                                <th>nom du client </th>                               
+                                <th>email du client</th>                                 
+                                <th>prix total</th>
+                                <th> details</th>    
                            </tr>
+                        </thead>
+                        <tbody> 
+                           {Commandes.map(commande => <tr>
+                                <td>{commande.idCommande}</td>
+                                <th>{commande.firstName +" "+ commande.lastName} </th> 
+                                <td> {commande.mail}</td>
+                                <td>{commande.totalPrice}</td>
+                                <td><button className="btn btn-sm btn-warning" onClick ={()=>showDetails(commande)} >show</button></td>                        
+                            </tr> )}
+                        </tbody>
+                    </table>}
+                    {details && <div >
+                         
+                        <h5 class="card-title">numero de commande : <strong>{idCommande}</strong></h5> 
+                        <br/>
+                        <div class="card-title">client infos</div>                        
+                        <table className="table my-0">
+                        <thead>
+                            <tr>
+                                <th>country</th>
+                                <th>companyName</th>                                
+                                <th>city</th>                                 
+                                <th>adresse</th>
+                                <th>phone</th>
+                                <th>notes</th>        
+                            </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>23</td>
-                                <td> raou@tech.uhp</td>
-                                <td>1213343454545</td>
-                                <td>65</td>
-                                <td>2</td>
-                                <td>234</td>
-                                <td>
-                                    <Link to="/accept" className="btn btn-sm btn-primary">
-                                    <span className="hidden-xs hidden-sm">Accept</span></Link><br/>
-                                    <Link to="/refuse" className="btn btn-danger">
-                                    <span className="hidden-xs hidden-sm">Refuse</span></Link>
-                                </td>
-                            </tr>  
-                            <tr>
-                                <td>2</td>
-                                <td>3</td>
-                                <td> raou@tech.uhp</td>
-                                <td>1213343454545</td>
-                                <td>22</td>
-                                <td>45</td>
-                                <td>5678</td>
-                                <td>
-                                    <Link to="/accept" className="btn btn-sm btn-primary">
-                                    <span className="hidden-xs hidden-sm">Accept</span></Link><br/>
-                                    <Link to="/refuse" className="btn btn-danger">
-                                    <span className="hidden-xs hidden-sm">Refuse</span></Link>
-                                </td>
-                            </tr>  
-                            <tr>
-                                <td>4</td>
-                                <td>3</td>
-                                <td> raou@tech.uhp</td>
-                                <td>1213343454545</td>
-                                <td>3</td>
-                                <td>87</td>
-                                <td>897</td>
-                                <td>
-                                    <Link to="/accept" className="btn btn-sm btn-primary">
-                                    <span className="hidden-xs hidden-sm">Accept</span></Link><br/>
-                                    <Link to="/refuse" className="btn btn-danger">
-                                    <span className="hidden-xs hidden-sm">Refuse</span></Link>
-                                </td>
-                            </tr>  
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                               <th>id_Command</th>
-                                <th>id_Client</th>
-                                <th>email_Client</th>  
-                                <th>numero_Cart</th>
-                                <th>id_produit</th>
-                                <th>qunatité</th>
-                                <th>prix $</th>
-                                <th>action</th>  
+                                <td>{country}</td>
+                                <td>{companyName}</td>
+                                <td>{city}</td>
+                                <td>{adresse}</td>
+                                <td>{phone}</td>
+                                <td>{notes}</td>                               
                             </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <div className="row">
-                    <div className="col-md-6 align-self-center">
-                        <p id="dataTable_info" className="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-                    </div>
-                    <div className="col-md-6">
-                        <nav className="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                            <ul className="pagination">
-                                <li className="page-item disabled"><Link className="page-link" to="/#" aria-label="Previous"><span aria-hidden="true">&#171;</span></Link></li>
-                                <li className="page-item active"><Link className="page-link" to="/#">1</Link></li>
-                                <li className="page-item"><Link className="page-link" to="/#">2</Link></li>
-                                <li className="page-item"><Link className="page-link" to="/#">3</Link></li>
-                                <li className="page-item"><Link className="page-link" to="/#" aria-label="Next"><span aria-hidden="true">&#188;</span></Link></li>
-                            </ul>
-                        </nav>
-                    </div>
+                            </tbody>
+                        </table>
+
+                        <br/><br/>
+                        <h5 class="card-title">produits commander</h5>
+
+                        <table className="table my-0">
+                        <thead>
+                            <tr>
+                                <th>numero de produits</th>
+                                <th>product name</th>                                
+                                <th>shortDescription</th>                                 
+                                <th>price</th>
+                                <th>image</th>       
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {products.map(p=><tr>
+                                <td>{p.id}</td>
+                                <td>{p.name}</td>
+                                <td>{p.shortDescription}</td>
+                                <td>{p.price}</td>
+                                <td><img src={p.image} alt="imageProduct"/></td>                               
+                            </tr>)}
+                            </tbody>
+                        </table>
+                        <button className="btn btn-sm btn-primary"> accepter</button> 
+                        <button className="btn btn-sm btn-danger"> refuser</button>  
+                        <button className="btn btn-sm btn-warning " onClick={hideDetails}> returner</button> 
+                        
+                    </div>}
                 </div>
             </div>          
             </div>

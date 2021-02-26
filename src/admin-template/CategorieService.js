@@ -5,7 +5,6 @@ const get_all = 'http://localhost:8080/AdminMain/categories';
 const ajout = 'http://localhost:8080/AdminMain/new-categorie';
 const delt  = 'http://localhost:8080/AdminMain/categories';
 const updat  = 'http://localhost:8080/AdminMain/profile';
-const search = 'http://localhost:8080/AdminMain/categories';
 
 class CategorieService {
 

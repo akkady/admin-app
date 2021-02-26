@@ -25,13 +25,13 @@ export default function AdminMain () {
             <nav className="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
                 <div className="container-fluid d-flex flex-column p-0"><a className="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="/adminMain">
                         <div className="sidebar-brand-icon rotate-n-15"><i className="fas fa-laugh-wink"></i></div>
-                        <div className="sidebar-brand-text mx-3"><span>Balouki-Chop</span></div>
+                        <div className="sidebar-brand-text mx-3"><span>E-SHOPPER</span></div>
                     </a>
                     <hr className="sidebar-divider my-0"/>
                     <ul className="nav navbar-nav text-light" id="accordionSidebar">
                         <li className="nav-item"><NavLink className="nav-link" to="/adminMain/dashboard"><i className="fas fa-tachometer-alt"></i><span>Dashboard</span></NavLink></li>
                         <li className="nav-item"><NavLink className="nav-link" to="/adminMain/profile"><i className="fas fa-user"></i><span>Profile</span></NavLink ></li>
-                        <li className="nav-item"><NavLink className="nav-link" to="/adminMain/clients"><i className="far fa-user-circle"></i><span>Users</span></NavLink ></li>
+                        {/*<li className="nav-item"><NavLink className="nav-link" to="/adminMain/clients"><i className="far fa-user-circle"></i><span>Users</span></NavLink ></li>*/}
                         <li className="nav-item"><NavLink className="nav-link" to="/adminMain/product"><i className="fas fa-shopping-basket"></i><span>Products</span></NavLink ></li>
                         <li className="nav-item"><NavLink className="nav-link" to="/adminMain/categories"><i className="fas fa-cubes"></i><span>Categories</span></NavLink ></li>
                         <li className="nav-item"><NavLink className="nav-link" to="/adminMain/commands"><i className="fas fa-gifts"></i><span>Commands</span></NavLink ></li>
