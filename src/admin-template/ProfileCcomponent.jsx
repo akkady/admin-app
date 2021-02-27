@@ -7,7 +7,7 @@ export default function ProfileComponent() {
                     <div className="row mb-3">
                         <div className="col-lg-4">
                             <div className="card mb-3">
-                                <div className="card-body text-center shadow"><img className="rounded-circle mb-3 mt-4" src="/assets/img/admins/image2.jpeg" width="160" height="160" alt="gg"/>
+                                <div className="card-body text-center shadow"><img className="rounded-circle mb-3 mt-4" src="/assets/img/admins/avatar4.jpeg" width="160" height="160" alt="gg"/>
                                     <div className="mb-3"><button className="btn btn-primary btn-sm" type="button">Change Photo</button></div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@ export default function ProfileComponent() {
                                                         <div className="form-group"><label htmlFor="last_name"><strong>Last Name</strong></label><input className="form-control" type="text" placeholder="Doe" name="last_name"/></div>
                                                     </div>
                                                 </div>
-                                                <div className="form-group"><button className="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
+                                                <div className="form-group"><button className="btn btn-primary btn-sm" type="button">Save Settings</button></div>
                                             </form>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@ export default function ProfileComponent() {
                                         <div className="col-6">
                                             <div className="form-group"><label htmlFor="last_name"><strong>the new password</strong></label><input className="form-control" type="text"  name="last_name"/></div>
                                         </div>
-                                        <div className="form-group"><button className="btn btn-primary btn-sm" type="submit">Save Settings</button></div>
+                                        <div className="form-group"><button className="btn btn-primary btn-sm" type="button">Save Settings</button></div>
                                     </form>
                                 </div>
                             </div>

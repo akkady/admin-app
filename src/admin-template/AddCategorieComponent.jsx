@@ -1,13 +1,12 @@
 
 
 import React, { useState }  from 'react'; 
-import { useHistory } from 'react-router-dom';
 import CategorieService from './CategorieService';
 
 function AddCategorie () {
 
-    const history=useHistory();
     const [unsaved,setUnsaved]= useState(false)
+    const [saved,setSaved]= useState(false)
 
     const [nomCategory, setNomCategory] = useState('')
     const [slag, setSlag ] = useState('')
@@ -18,8 +17,8 @@ function AddCategorie () {
 
     const saveProduct=()=>{
         CategorieService.addCategorie(formData)
-        .then(history.push('/adminMain/categories'))
-        .catch(err=>setUnsaved(true))
+        .then(()=>{setUnsaved(false); setSaved(true)})
+        .catch(()=>{setUnsaved(true); setSaved(false)})
     }
      return (
         <div className="card ">
@@ -38,6 +37,7 @@ function AddCategorie () {
                     </div>
                     <div>
                     { unsaved && <div className='alert alert-warning' > Something goes wrong please check your inputs </div>}  
+                    { saved && <div className='alert alert-success' > category was added </div>}
                     </div>
                     </div>
                 </div>

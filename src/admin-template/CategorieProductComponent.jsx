@@ -22,9 +22,10 @@ export default function CategorieProductComponent(){
                 <div className="col-md-6 text-nowrap">
                         <Link to="/adminMain/new-categorie"  className="btn btn-success" ><i className="fas fa-plus-circle"></i> new categorie</Link>
                     </div>
-                    <div className="col-md-6">
-                        <div className="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" className="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"/></label></div>
-                    </div>
+                    {//<div className="col-md-6">
+                      //  <div className="text-md-right dataTables_filter" id="dataTable_filter"><label><input type="search" className="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"/></label></div>
+                    //</div>
+                }
                 </div>
                 <div className="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                     <table className="table my-0" id="dataTable">

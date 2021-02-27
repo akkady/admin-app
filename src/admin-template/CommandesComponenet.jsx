@@ -52,7 +52,7 @@ export default function CommandesComponenet() {
                            </tr>
                         </thead>
                         <tbody> 
-                           {Commandes.map(commande => <tr>
+                           {Commandes.map(commande => <tr key={commande.idCommande}>
                                 <td>{commande.idCommande}</td>
                                 <th>{commande.firstName +" "+ commande.lastName} </th> 
                                 <td> {commande.mail}</td>
@@ -63,9 +63,9 @@ export default function CommandesComponenet() {
                     </table>}
                     {details && <div >
                          
-                        <h5 class="card-title">numero de commande : <strong>{idCommande}</strong></h5> 
+                        <h5 className="card-title">numero de commande : <strong>{idCommande}</strong></h5> 
                         <br/>
-                        <div class="card-title">client infos</div>                        
+                        <div className="card-title">client infos</div>                        
                         <table className="table my-0">
                         <thead>
                             <tr>
@@ -90,7 +90,7 @@ export default function CommandesComponenet() {
                         </table>
 
                         <br/><br/>
-                        <h5 class="card-title">produits commander</h5>
+                        <h5 className="card-title">produits commander</h5>
 
                         <table className="table my-0">
                         <thead>
@@ -103,9 +103,9 @@ export default function CommandesComponenet() {
                             </tr>
                         </thead>
                         <tbody>
-                            {products.map(p=><tr>
+                            {products.map(p=><tr key={p.id}>
                                 <td>{p.id}</td>
-                                <td>{p.name}</td>
+                                <td>{p.name}</td> 
                                 <td>{p.shortDescription}</td>
                                 <td>{p.price}</td>
                                 <td><img src={p.image} alt="imageProduct"/></td>                               
